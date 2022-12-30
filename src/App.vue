@@ -15,9 +15,9 @@
 
   <div>
     <div><h2>Intensidad del led 2</h2></div>
-    <div> <input @click="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5"> <label for="pwm">R</label> </div>
-    <div> <input @click="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5"> <label for="pwm">G</label> </div>
-    <div> <input @click="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5"> <label for="pwm">B</label> </div>
+    <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5"> <label for="pwm">R</label> </div>
+    <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5"> <label for="pwm">G</label> </div>
+    <div> <input @input="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5"> <label for="pwm">B</label> </div>
     <div class="circulo_pwm" id="led2"></div>
   </div>
 </template>
