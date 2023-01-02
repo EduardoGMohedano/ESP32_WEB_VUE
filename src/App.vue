@@ -50,7 +50,7 @@ export default{
         this.led_state = !this.led_state;
         //execute post request
         axios.AxiosHeaders
-        axios.post("http://192.168.1.94:80/api/gpio",estado).then(data => {
+        axios.post("/api/gpio",estado).then(data => {
           console.log(data);
         })
         .catch(error => {
