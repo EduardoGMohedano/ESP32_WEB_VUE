@@ -24,6 +24,7 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue' //Cada componente es una pagina y es importada desde la otra ubicacion
+import axios from 'axios' //lib to make http requests
 
 export default{
     data(){
@@ -45,7 +46,17 @@ export default{
       },
 
       led_change(){
-        this.led_state = !this.led_state
+        let estado = this.led_state ? "1" : "0";
+        this.led_state = !this.led_state;
+        //execute post request
+        axios.AxiosHeaders
+        axios.post("http://192.168.1.94:80/api/gpio",estado).then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
         if(this.led_state)
           document.getElementById("led1").style.backgroundColor = 'red';
         else
