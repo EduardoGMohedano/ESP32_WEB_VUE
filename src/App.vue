@@ -49,7 +49,6 @@ export default{
         let estado = this.led_state ? "1" : "0";
         this.led_state = !this.led_state;
         //execute post request
-        axios.AxiosHeaders
         axios.post("/api/gpio",estado).then(data => {
           console.log(data);
         })
@@ -74,6 +73,17 @@ export default{
         pwm_str+= this.b.toString();
         pwm_str+= ")";
         document.getElementById("led2").style.backgroundColor = pwm_str;
+        //Execute post request
+        axios.post("/api/rgb_led",{
+          red : parseInt(this.r),
+          green : parseInt(this.g),
+          blue : parseInt(this.b)
+        }).then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
       },
 
       pwm_function_g(){
@@ -87,6 +97,17 @@ export default{
         pwm_str+= this.b.toString();
         pwm_str+= ")";
         document.getElementById("led2").style.backgroundColor = pwm_str;
+        //Execute post request
+        axios.post("/api/rgb_led",{
+          red : parseInt(this.r),
+          green : parseInt(this.g),
+          blue : parseInt(this.b)
+        }).then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
       },
 
       pwm_function_b(){
@@ -100,6 +121,17 @@ export default{
         pwm_str+= this.b.toString();
         pwm_str+= ")";
         document.getElementById("led2").style.backgroundColor = pwm_str;
+         //Execute post request
+        axios.post("/api/rgb_led",{
+          red : parseInt(this.r),
+          green : parseInt(this.g),
+          blue : parseInt(this.b)
+        }).then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
       }
 
     },
