@@ -62,8 +62,7 @@ export default{
           document.getElementById("led1").style.backgroundColor = 'green';
       },
 
-      pwm_function_r(){
-        this.r = document.getElementById("pwm_r").value;
+      update_led_rgb(){
         console.log("R:%s G:%s B:%s",this.r,this.g,this.b);
         let pwm_str = "rgb(";
         pwm_str+= this.r.toString();
@@ -84,54 +83,21 @@ export default{
         .catch(error => {
           console.log(error);
         });
+      },
+
+      pwm_function_r(){
+        this.r = document.getElementById("pwm_r").value;
+        this.update_led_rgb();
       },
 
       pwm_function_g(){
         this.g = document.getElementById("pwm_g").value;
-        console.log("R:%s G:%s B:%s",this.r,this.g,this.b);
-        let pwm_str = "rgb(";
-        pwm_str+= this.r.toString();
-        pwm_str+= ",";
-        pwm_str+= this.g.toString();
-        pwm_str+= ",";
-        pwm_str+= this.b.toString();
-        pwm_str+= ")";
-        document.getElementById("led2").style.backgroundColor = pwm_str;
-        //Execute post request
-        axios.post("/api/rgb_led",{
-          red : parseInt(this.r),
-          green : parseInt(this.g),
-          blue : parseInt(this.b)
-        }).then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        this.update_led_rgb();
       },
 
       pwm_function_b(){
         this.b = document.getElementById("pwm_b").value;
-        console.log("R:%s G:%s B:%s",this.r,this.g,this.b);
-        let pwm_str = "rgb(";
-        pwm_str+= this.r.toString();
-        pwm_str+= ",";
-        pwm_str+= this.g.toString();
-        pwm_str+= ",";
-        pwm_str+= this.b.toString();
-        pwm_str+= ")";
-        document.getElementById("led2").style.backgroundColor = pwm_str;
-         //Execute post request
-        axios.post("/api/rgb_led",{
-          red : parseInt(this.r),
-          green : parseInt(this.g),
-          blue : parseInt(this.b)
-        }).then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        this.update_led_rgb();
       }
 
     },
