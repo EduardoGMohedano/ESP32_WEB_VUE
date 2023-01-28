@@ -30,7 +30,7 @@ export default{
     data(){
       return{
         count : 0,
-        led_state : false,
+        led_state : true,
         pwm_fun: 0,
         r : 50,
         g : 50,
@@ -174,7 +174,7 @@ export default{
   }
 
   .circulo{
-      background-color: grey;
+      background-color: red;
       width: 80px;
       height: 80px;
       border-radius: 50%;
