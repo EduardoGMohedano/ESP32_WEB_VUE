@@ -3,17 +3,19 @@
   <h1>Bienvenidos a la pagina de la ESP32</h1>
 
   <div>
-    <h2>Led 1</h2>
+    <h2 style="margin-top:1.5cm;">Led 1</h2>
     <div>
       <button class="button-4" @click="led_change">
       <p v-if="led_state">Encender</p>
       <p v-else>Apagar</p>
     </button>
     </div>
+    <p style="margin-bottom:1cm;" ></p>
     <div class="circulo" id="led1"></div>
   </div>
 
   <div>
+    <p style="margin-bottom:2cm;" ></p>
     <div><h2>Control led 2</h2></div>
     <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5" value="0"> <label for="pwm">R</label> </div>
     <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5" value="0"> <label for="pwm">G</label> </div>
@@ -190,6 +192,7 @@ export default{
       border-radius: 50%;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 1cm;
   }
 
   .pwm{
