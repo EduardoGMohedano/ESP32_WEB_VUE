@@ -14,10 +14,10 @@
   </div>
 
   <div>
-    <div><h2>Intensidad del led 2</h2></div>
-    <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5"> <label for="pwm">R</label> </div>
-    <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5"> <label for="pwm">G</label> </div>
-    <div> <input @input="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5"> <label for="pwm">B</label> </div>
+    <div><h2>Control led 2</h2></div>
+    <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5" value="0"> <label for="pwm">R</label> </div>
+    <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5" value="0"> <label for="pwm">G</label> </div>
+    <div> <input @input="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5" value="0"> <label for="pwm">B</label> </div>
     <div class="circulo_pwm" id="led2"></div>
   </div>
 </template>
@@ -32,9 +32,9 @@ export default{
         count : 0,
         led_state : true,
         pwm_fun: 0,
-        r : 50,
-        g : 50,
-        b : 50, 
+        r : 0,
+        g : 0,
+        b : 0, 
       }
     },
 
