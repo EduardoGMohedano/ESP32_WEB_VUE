@@ -1,9 +1,9 @@
 <template>
   <img alt="Logo Bienvenida" src="./assets/home.png">
-  <h1>Bienvenidos a la pagina de la ESP32</h1>
+  <h1>Bienvenidos a la página de la ESP32</h1>
 
   <div>
-    <h2 style="margin-top:1.5cm;">Led 1</h2>
+    <h2 style="margin-top:1.5cm;">Cafetera</h2>
     <div>
       <button class="button-4" @click="led_change">
       <p v-if="led_state">Encender</p>
@@ -11,15 +11,16 @@
     </button>
     </div>
     <p style="margin-bottom:1cm;" ></p>
-    <div class="circulo" id="led1"></div>
+    <p v-if="led_state"> <img class="centra-imagen" src="./assets/Cafe1.png"> </p>
+    <p v-else> <img class="centra-imagen" src="./assets/Cafe2.png"> </p>
   </div>
 
   <div>
     <p style="margin-bottom:2cm;" ></p>
     <div><h2>Control led 2</h2></div>
-    <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5" value="0"> <label for="pwm">R</label> </div>
-    <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5" value="0"> <label for="pwm">G</label> </div>
-    <div> <input @input="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5" value="0"> <label for="pwm">B</label> </div>
+    <div> <input @input="pwm_function_r" type="range" id="pwm_r" min="0" max="100" step="5" value="0"> <label for="pwm">Rojo</label> </div>
+    <div> <input @input="pwm_function_g" type="range" id="pwm_g" min="0" max="100" step="5" value="0"> <label for="pwm">Verde</label> </div>
+    <div> <input @input="pwm_function_b" type="range" id="pwm_b" min="0" max="100" step="5" value="0"> <label for="pwm">Azul</label> </div>
     <div class="circulo_pwm" id="led2"></div>
   </div>
 </template>
@@ -58,10 +59,6 @@ export default{
           console.log(error);
         });
 
-        if(this.led_state)
-          document.getElementById("led1").style.backgroundColor = 'red';
-        else
-          document.getElementById("led1").style.backgroundColor = 'green';
       },
 
       update_led_rgb(){
@@ -199,6 +196,11 @@ export default{
       display: block;
       margin-left: auto;
       margin-right: auto;
+  }
+
+  .centra-imagen{
+    position: relative;
+    margin-left: 25px;
   }
 
   h1 {text-align: center;}
